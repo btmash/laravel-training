@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/trainings', 'TrainingController@index')->name('trainings');
+Route::get('/training/{id}', 'TrainingController@training')->name('training');
+
+Route::group(['middleware' => 'auth'], function() {
+  Route::get('/training/new', 'TrainingController@show_form')->name('create_training_form');
+  Route::post('/training/new', 'TrainingController@create')->name('create_training');
+});
