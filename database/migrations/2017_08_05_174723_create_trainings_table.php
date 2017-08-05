@@ -23,6 +23,7 @@ class CreateTrainingsTable extends Migration
             $table->date('date_to');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->index(['date_from', 'date_to'], 'dates');
             $table->timestamps();
         });
     }
