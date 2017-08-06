@@ -68,10 +68,10 @@
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
-                    <a href="{{ url('trainings') }}">Trainings</a>
+                    <a href="{{ route('trainings') }}">Trainings</a>
                     @if (Auth::check())
                         <a href="{{ url('/home') }}">Home</a>
-                        <a href="{{ url('create_training_form') }}">Create Training</a>
+                        <a href="{{ route('create_training') }}">Create Training</a>
                     @else
                         <a href="{{ url('/login') }}">Login</a>
                         <a href="{{ url('/register') }}">Register</a>
