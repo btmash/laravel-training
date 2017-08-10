@@ -4,7 +4,6 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Training;
 
 class User extends Authenticatable
 {
@@ -29,6 +28,6 @@ class User extends Authenticatable
     ];
 
     public function trainings() {
-      return $this->hasMany('Training');
+      return $this->hasMany('App\Training');
     }
 }

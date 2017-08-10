@@ -2,8 +2,6 @@
 
 namespace App;
 
-use App\User;
-
 use Illuminate\Database\Eloquent\Model;
 
 class Training extends Model {
@@ -17,6 +15,6 @@ class Training extends Model {
   ];
 
   public function author() {
-    return $this->belongsTo('User', 'user_id');
+    return $this->belongsTo('App\User', 'user_id');
   }
 }
